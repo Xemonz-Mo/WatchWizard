@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WatchWizard</string>
+    <string name="home">Home</string>
+    <string name="liked">Liked</string>
+    <string name="watched">Watched</string>
+    <string name="search">Search</string>
+    <string name="recommended">Recommended</string>
+    <string name="trending">Trending</string>
+    <string name="results">Search Results</string>
+
+</resources>
