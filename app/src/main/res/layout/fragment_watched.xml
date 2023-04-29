@@ -9,6 +9,7 @@
         android:id="@+id/watched_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/grey_main"
         android:gravity="center"
         android:text="@string/watched"
         android:textColor="@color/white"
