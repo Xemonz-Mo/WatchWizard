@@ -1,5 +1,6 @@
 package com.example.watchwizard
 
+import Movie
 import com.google.gson.annotations.SerializedName
 
 

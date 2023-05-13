@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_main">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+
+            <ImageView
+                android:id="@+id/backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="202dp"
+                android:contentDescription="@string/results"
+                android:scaleType="fitCenter"
+                android:src="@drawable/poster_placeholder"
+                android:background="@drawable/border"
+                android:paddingVertical="3dp" />
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="107dp"
+                android:layout_height="159dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="-120dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/results"
+                android:elevation="10dp"
+                android:maxHeight="300dp"
+                android:src="@drawable/poster_placeholder"
+                android:background="@drawable/border"
+                android:padding="4dp"
+                android:layout_marginLeft="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12sp"
+                android:layout_marginTop="20sp"
+                android:background="@drawable/border">
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16sp"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/release_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/vote_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
