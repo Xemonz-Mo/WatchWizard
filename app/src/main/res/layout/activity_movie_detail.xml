@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,35 +19,34 @@
             <ImageView
                 android:id="@+id/backdrop"
                 android:layout_width="match_parent"
-                android:layout_height="202dp"
-                android:contentDescription="@string/results"
-                android:scaleType="fitCenter"
-                android:src="@drawable/poster_placeholder"
+                android:layout_height="200dp"
                 android:background="@drawable/border"
-                android:paddingVertical="3dp" />
+                android:contentDescription="@string/results"
+                android:scaleType="centerCrop"
+                android:src="@drawable/poster_placeholder" />
 
             <ImageView
                 android:id="@+id/poster"
                 android:layout_width="107dp"
-                android:layout_height="159dp"
+                android:layout_height="160dp"
                 android:layout_gravity="left"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="-120dp"
                 android:adjustViewBounds="true"
+                android:background="@drawable/border"
                 android:contentDescription="@string/results"
                 android:elevation="10dp"
                 android:maxHeight="300dp"
-                android:src="@drawable/poster_placeholder"
-                android:background="@drawable/border"
                 android:padding="4dp"
-                android:layout_marginLeft="12dp"/>
+                android:src="@drawable/poster_placeholder" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="12sp"
                 android:layout_marginTop="20sp"
-                android:background="@drawable/border">
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="12sp">
 
 
                 <TextView
@@ -85,9 +85,51 @@
                     android:layout_marginTop="12sp"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
-        </LinearLayout>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:orientation="horizontal">
 
+                <ImageButton
+                    android:id="@+id/like_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/liked"
+                    app:tint="#F44336"
+                    app:srcCompat="@drawable/unlike" />
+
+                <ImageButton
+                    android:id="@+id/unlike_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/liked"
+                    app:tint="#F44336"
+                    app:srcCompat="@drawable/like" />
+
+                <ImageButton
+                    android:id="@+id/unwatched_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/watched"
+                    app:tint="@color/purple_main"
+                    app:srcCompat="@drawable/watched" />
+
+                <ImageButton
+                    android:id="@+id/watched_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/watched"
+                    app:tint="@color/purple_main"
+                    app:srcCompat="@drawable/unwatched" />
+
+            </LinearLayout>
 
 
         </LinearLayout>

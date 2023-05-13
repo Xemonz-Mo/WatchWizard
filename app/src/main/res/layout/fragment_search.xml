@@ -18,11 +18,12 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_above="@+id/search_recycler_view"
         android:layout_marginBottom="59dp"
         android:background="@color/grey_main"
         android:fontFamily="sans-serif"
+        android:gravity="center"
         android:text="@string/results"
         android:textAlignment="center"
         android:textColor="#FFFFFF"

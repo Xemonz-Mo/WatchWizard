@@ -52,7 +52,7 @@ data class Movie(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeByte(if (adult) 1 else 0)
         parcel.writeString(backdropPath)
-        parcel.writeIntArray(genreIds.toIntArray())
+        parcel.writeIntArray(genreIds?.toIntArray())
         parcel.writeInt(id)
         parcel.writeString(originalLanguage)
         parcel.writeString(originalTitle)

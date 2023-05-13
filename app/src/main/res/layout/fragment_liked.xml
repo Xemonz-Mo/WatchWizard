@@ -2,18 +2,18 @@
     android:id="@+id/liked_fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/liked_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
         android:background="@color/grey_main"
         android:gravity="center"
         android:text="@string/liked"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/liked_recycler_view"
