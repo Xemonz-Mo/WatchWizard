@@ -3,7 +3,6 @@ package com.example.watchwizard
 import Movie
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +15,7 @@ class MovieAdapter (private val movieList : MutableList<Movie>) : RecyclerView.A
         context = parent.context
         return MovieViewHolder(LayoutInflater.from(context).inflate(R.layout.movie_item, parent, false))
     }
+
 
     override fun getItemCount(): Int = movieList.size
 
