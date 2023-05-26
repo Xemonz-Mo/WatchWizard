@@ -33,8 +33,11 @@ class Search : Fragment() {
     private lateinit var speechRecognizer: SpeechRecognizer
 
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
 
         recyclerView = view.findViewById(R.id.search_recycler_view)
@@ -95,7 +98,10 @@ class Search : Fragment() {
     private fun searchMovies(query: String) {
         val call = RetrofitClient.retrofit.searchMovies(RetrofitClient.API_KEY, query)
         call.enqueue(object : retrofit2.Callback<MovieListResponse> {
-            override fun onResponse(call: Call<MovieListResponse>, response: Response<MovieListResponse>) {
+            override fun onResponse(
+                call: Call<MovieListResponse>,
+                response: Response<MovieListResponse>
+            ) {
                 if (response.isSuccessful) {
                     val movieListResponse = response.body()
                     val movies = movieListResponse?.movies ?: emptyList()
@@ -103,7 +109,8 @@ class Search : Fragment() {
                     recyclerView.adapter = adapter
                 } else {
                     Log.e("Retrofit", "Error searching for movies")
-                    Toast.makeText(context, "Failed to search for movies", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Failed to search for movies", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
@@ -116,26 +123,29 @@ class Search : Fragment() {
 
     private fun isSpeechRecognizerPermissionGranted(): Boolean {
         val permission = Manifest.permission.RECORD_AUDIO
-        return ContextCompat.checkSelfPermission(requireContext(), permission) == PackageManager.PERMISSION_GRANTED
+        return ContextCompat.checkSelfPermission(
+            requireContext(),
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun requestSpeechRecognizerPermission() {
         val permission = Manifest.permission.RECORD_AUDIO
-        ActivityCompat.requestPermissions(requireActivity(), arrayOf(permission), RECORD_AUDIO_PERMISSION_REQUEST_CODE)
+        ActivityCompat.requestPermissions(requireActivity(), arrayOf(permission), 123)
     }
 
     private fun startSpeechRecognition() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        intent.putExtra(
+            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+        )
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak to search...")
         speechRecognizer.startListening(intent)
     }
-
-    companion object {
-        private const val RECORD_AUDIO_PERMISSION_REQUEST_CODE = 123
-    }
 }
+
 
 
 
